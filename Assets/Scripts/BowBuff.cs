@@ -2,16 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BowBuff : MonoBehaviour
+public abstract class BowBuff : ScriptableObject
 {
-    public ArrowData arrowData;
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Player"))
-        {
-            arrowData.damage = 100;
-        }
-
-    }
+    public abstract void Apply(ArrowData arrow);
 }
