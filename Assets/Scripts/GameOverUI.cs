@@ -14,6 +14,7 @@ public class GameOverUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         PlayerHealth.OnPlayerDeath += ActivateGameObject;
         EnemyHealth.OnEnemyDeath += CountScore;
         this.gameObject.SetActive(false);
@@ -25,15 +26,16 @@ public class GameOverUI : MonoBehaviour
         EnemyHealth.OnEnemyDeath -= CountScore;
     }
 
-    public void ReturnToMenu()
+    public void ReturnToMainMenu()
     {
         SceneManager.LoadScene(0);
     }
 
     public void RetryGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
         SceneManager.LoadScene(2);
+        print("Retry button is working!");
     }
 
     private void CountScore()
