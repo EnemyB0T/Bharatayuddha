@@ -1959,6 +1959,7 @@ MonoBehaviour:
   buffedHealth: 100
   currentExp: 0
   maxExp: 100
+  currentLevel: 0
   healthBar: {fileID: 181281520}
   expBar: {fileID: 1195035275}
 --- !u!114 &990673366
@@ -2536,6 +2537,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1195035274}
+  accumulatedLevel: 0
+  levelUpIncreaseDamage: 1
+  levelUpIncreaseHealth: 10
 --- !u!1 &1313958292
 GameObject:
   m_ObjectHideFlags: 0
