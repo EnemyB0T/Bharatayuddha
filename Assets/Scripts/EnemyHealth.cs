@@ -5,6 +5,8 @@ using System;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public GameObject FloatingTextPrefab;
+
     [SerializeField] public int health = 100;
 
     [SerializeField] GameObject waveLeft;
@@ -59,6 +61,11 @@ public class EnemyHealth : MonoBehaviour
         if(health <= 0)
         {
             Die();
+        }
+        if(FloatingTextPrefab && health >= 0)
+        {
+            var go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+            go.GetComponent<TextMesh>().text = amount.ToString();
         }
     }
 

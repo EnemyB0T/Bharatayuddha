@@ -150,7 +150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   speed: 1.5
+  returnAI: 2
+  remainingTimeToReturnAI: 0
   data: {fileID: 11400000, guid: 3244b6f945256cb46878f2894ae21735, type: 2}
+  waveManager: {fileID: 0}
 --- !u!95 &5540917753212263079
 Animator:
   serializedVersion: 5
@@ -183,5 +186,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15b8f5225c60a24f9f211afcb056b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FloatingTextPrefab: {fileID: 2329487668371207131, guid: bf6665ce0c46b834aac1446e338c7d9e, type: 3}
   health: 100
+  waveLeft: {fileID: 0}
   MAX_HEALTH: 100
+  exp: 1
+  spawner: {fileID: 0}
