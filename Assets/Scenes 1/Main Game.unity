@@ -1068,7 +1068,6 @@ GameObject:
   - component: {fileID: 628523804}
   - component: {fileID: 628523805}
   - component: {fileID: 628523806}
-  - component: {fileID: 628523807}
   m_Layer: 0
   m_Name: Bow
   m_TagString: Untagged
@@ -1160,20 +1159,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &628523807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628523803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d077172921000b147af97669324ed5d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseArrow: {fileID: 11400000, guid: 1209a9e646b7d8e4bad226e575a795f7, type: 2}
-  appliedArrow: {fileID: 11400000, guid: 23f8c290b8d7bc049ba1061e51abf085, type: 2}
 --- !u!1 &631766996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,6 +1812,7 @@ GameObject:
   - component: {fileID: 990673366}
   - component: {fileID: 990673367}
   - component: {fileID: 990673368}
+  - component: {fileID: 990673369}
   m_Layer: 3
   m_Name: Knight
   m_TagString: Player
@@ -2020,6 +2006,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &990673369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990673360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d077172921000b147af97669324ed5d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseArrow: {fileID: 11400000, guid: 1209a9e646b7d8e4bad226e575a795f7, type: 2}
+  appliedArrow: {fileID: 11400000, guid: 23f8c290b8d7bc049ba1061e51abf085, type: 2}
 --- !u!1 &1039427109
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,8 +2538,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1195035274}
   accumulatedLevel: 0
+  playerHealth: {fileID: 990673365}
+  attackArea: {fileID: 1138596047}
   levelUpIncreaseDamage: 1
   levelUpIncreaseHealth: 10
+  arrow: {fileID: 11400000, guid: 23f8c290b8d7bc049ba1061e51abf085, type: 2}
 --- !u!1 &1313958292
 GameObject:
   m_ObjectHideFlags: 0
