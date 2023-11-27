@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
 
+        /*
         if(transform.position.y >= BORDER_Y_TOP)
         {
             transform.position = new Vector3(transform.position.x, BORDER_Y_TOP, 0);
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(BORDER_X_RIGHT, transform.position.y, 0);
         } 
+        */
         
 
 

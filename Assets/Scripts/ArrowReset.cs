@@ -9,6 +9,8 @@ public class ArrowReset : MonoBehaviour
 
     private void Awake()
     {
-        appliedArrow = baseArrow;
+        appliedArrow.damage = baseArrow.damage;
+        appliedArrow.speed = baseArrow.speed;
+        appliedArrow.lifeTime = baseArrow.lifeTime;
     }
 }

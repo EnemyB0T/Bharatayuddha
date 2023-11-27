@@ -15,4 +15,4 @@ MonoBehaviour:
   hp: 5
   damage: 20
   speed: 2
-  exp: 1.5
+  exp: 5

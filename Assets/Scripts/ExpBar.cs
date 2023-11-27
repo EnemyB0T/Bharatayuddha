@@ -6,6 +6,16 @@ using UnityEngine.UI;
 public class ExpBar : MonoBehaviour
 {
     public Slider slider;
+    public int accumulatedLevel = 0;
+
+
+    //Stats to be buffed
+    public PlayerHealth playerHealth;
+    public AttackArea attackArea;
+    public int levelUpIncreaseDamage = 1;
+    public int levelUpIncreaseHealth = 10;
+    public ArrowData arrow;
+
 
     public void SetMaxExp(int maxExp, int exp)
     {
@@ -23,8 +33,15 @@ public class ExpBar : MonoBehaviour
         if(slider.value + exp > slider.maxValue)
         {
             float expOver = slider.value + exp - slider.maxValue;
-            //level up code here --
+            
             slider.value = expOver;
+            accumulatedLevel++;
+            
+            //level up code here --
+            attackArea.damage += levelUpIncreaseDamage;
+            playerHealth.SetHealth(playerHealth.health + levelUpIncreaseHealth, playerHealth.health);
+            arrow.damage += levelUpIncreaseDamage;
+
         }
         else
             slider.value += exp;

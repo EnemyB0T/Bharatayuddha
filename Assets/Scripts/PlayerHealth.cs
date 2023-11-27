@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     public int currentExp = 0;
     public int maxExp = 100;
+    public int currentLevel = 0;
 
     public static Action OnPlayerDeath;
     public static Action OnEnemyDeath;
@@ -41,6 +42,11 @@ public class PlayerHealth : MonoBehaviour
         this.currentHealth = maxHealth;
         this.health = health;
         healthBar.SetMaxHealth(maxHealth, health);
+        
+    }
+
+    public void SetExp(int maxExp, int currentExp)
+    {
         expBar.SetMaxExp(maxExp, currentExp);
     }
 
