@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBar healthBar;
     public ExpBar expBar;
+    public PlayerStatsValue stats;
+    public HealthValue healthValue;
 
     // Update is called once per frame
     void Update()
@@ -35,6 +38,15 @@ public class PlayerHealth : MonoBehaviour
         {
             GainExp(10);
         }
+
+        if(shield > 0)
+        {
+            stats.ActivateShield();
+        }
+        else
+        {
+            stats.DeactivateShield();
+        }
     }
 
     public void SetHealth(int maxHealth, int health)
@@ -42,7 +54,6 @@ public class PlayerHealth : MonoBehaviour
         this.currentHealth = maxHealth;
         this.health = health;
         healthBar.SetMaxHealth(maxHealth, health);
-        
     }
 
     public void SetExp(int maxExp, int currentExp)
@@ -90,6 +101,7 @@ public class PlayerHealth : MonoBehaviour
             healthBar.SetHealth(health);
         }
         
+        healthValue.UpdateHealth();
 
         if(health <= 0)
         {
@@ -127,6 +139,8 @@ public class PlayerHealth : MonoBehaviour
         {
             this.health += amount;
         }
+
+        healthValue.UpdateHealth();
     }
 
     public void GainExp(float acquiredExp)
