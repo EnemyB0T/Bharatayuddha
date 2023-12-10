@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -13,13 +14,15 @@ public class Enemy : MonoBehaviour
     private float returnAI = 2f;
     [SerializeField]
     private float remainingTimeToReturnAI;
+    private bool isPlayer1;
 
     [SerializeField]
     private EnemyData data;
 
     private bool gotHit = false;
     private bool isHit = false;
-    private GameObject player;
+    private GameObject[] player;
+    private int playerIndex;
     
     //comment
 
@@ -28,7 +31,9 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        isPlayer1 = (Random.value < 0.5f);
+        player = GameObject.FindGameObjectsWithTag("Player");
+        playerIndex = Random.Range(0, player.Length);
         remainingTimeToReturnAI = returnAI;
         SetEnemyValues();
     }
@@ -36,16 +41,20 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((!isHit && !gotHit))
-            Swarm();
+        if ((!isHit && !gotHit))
+        {
+            Swarm(player[playerIndex]);
+        }
         else
             ResurrectAI();
         // if(GameObject.Find("Knight") == null)
         // {
         //     Destroy(gameObject);
         // }
-    }
 
+        
+    }
+    
     private void SetEnemyValues()
     {
         GetComponent<EnemyHealth>().SetHealth(data.hp, data.hp, data.exp);
@@ -53,11 +62,18 @@ public class Enemy : MonoBehaviour
         speed = data.speed;
     }
 
-    private void Swarm()
+    private void Swarm(GameObject player)
     {
         if(player != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            if (Random.Range(1, 0) == 0)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            }
         }
         
     }   

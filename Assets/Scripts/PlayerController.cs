@@ -9,10 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public Animator animator;
 
-    public float BORDER_X_LEFT = -19.5f;
-    public float BORDER_X_RIGHT = 19.5f;
-    public float BORDER_Y_TOP = 9f;
-    public float BORDER_Y_BOTTOM = -9f;
+    public bool isPlayer1 = true;
     private Vector2 axisMovement;
 
     private int speedBoostDuration = 1; //default boost duration
@@ -27,33 +24,77 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /* // SinglePlayer support
         axisMovement.x = Input.GetAxisRaw("Horizontal");
         axisMovement.y = Input.GetAxisRaw("Vertical");
 
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
-
-        /*
-        if(transform.position.y >= BORDER_Y_TOP)
-        {
-            transform.position = new Vector3(transform.position.x, BORDER_Y_TOP, 0);
-        } 
-        else if(transform.position.y <= BORDER_Y_BOTTOM)
-        {
-            transform.position = new Vector3(transform.position.x, BORDER_Y_BOTTOM, 0);
-        } 
-        else if(transform.position.x <= BORDER_X_LEFT)
-        {
-            transform.position = new Vector3(BORDER_X_LEFT, transform.position.y, 0);
-        } 
-        else if(transform.position.x >= BORDER_X_RIGHT)
-        {
-            transform.position = new Vector3(BORDER_X_RIGHT, transform.position.y, 0);
-        } 
         */
-        
+
+        //Split Screen Support
+
+        if (isPlayer1)
+        {
+            // For Player 1's horizontal movement (A and D keys)
+            if (Input.GetKey(KeyCode.A))
+            {
+                axisMovement.x = -1;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                axisMovement.x = 1;
+            }
+            else
+            {
+                axisMovement.x = 0;
+            }
+
+            // For Player 1's vertical movement (W and S keys)
+            if (Input.GetKey(KeyCode.W))
+            {
+                axisMovement.y = 1;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                axisMovement.y = -1;
+            }
+            else
+            {
+                axisMovement.y = 0;
+            }
+        }
+        else
+        {
+            // For Player 2's horizontal movement (Left and Right arrow keys)
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                axisMovement.x = -1;
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                axisMovement.x = 1;
+            }
+            else
+            {
+                axisMovement.x = 0;
+            }
+
+            // For Player 2's vertical movement (Up and Down arrow keys)
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                axisMovement.y = 1;
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                axisMovement.y = -1;
+            }
+            else
+            {
+                axisMovement.y = 0;
+            }
+        }
 
 
-        
     }
 
     private void FixedUpdate()

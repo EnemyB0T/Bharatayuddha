@@ -154,6 +154,8 @@ MonoBehaviour:
   returnAI: 2
   remainingTimeToReturnAI: 0
   data: {fileID: 11400000, guid: 6c439460cd4cdbd48833b087a0009c15, type: 2}
+  player1: {fileID: 1614225109671854701, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
+  player2: {fileID: 652890311319216433, guid: ad4230952a77092499d583816e86eaee, type: 3}
   waveManager: {fileID: 0}
 --- !u!111 &6434232843828147035
 Animation:
