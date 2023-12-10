@@ -28,9 +28,9 @@ public class PlayerController : MonoBehaviour
         axisMovement.x = Input.GetAxisRaw("Horizontal");
         axisMovement.y = Input.GetAxisRaw("Vertical");
 
-        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
+        
         */
-
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
         //Split Screen Support
 
         if (isPlayer1)
