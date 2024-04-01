@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
 {
     public GameObject FloatingTextPrefab;
 
+    private bool player1;
+
     [SerializeField] public int health = 100;
 
     [SerializeField] GameObject waveLeft;
@@ -48,12 +50,14 @@ public class EnemyHealth : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    public void Damage(int amount)
+    public void Damage(int amount, bool isPlayer1)
     {
         if(amount < 0)
         {
             throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
         }
+
+        player1 = isPlayer1;
 
         this.health -= amount;
         StartCoroutine(VisualIndicator(Color.red));
@@ -103,7 +107,12 @@ public class EnemyHealth : MonoBehaviour
         {
             GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().enemiesLeft--;
             GameObject.Find("EnemiesKilledValue").GetComponent<ScoreValue>().UpdateScore(1);
-            GameObject.Find("Knight").GetComponent<PlayerHealth>().GainExp(this.exp);
+            GameObject[] players;
+            players = GameObject.FindGameObjectsWithTag("Player");
+            if (player1)
+                players[0].GetComponent<PlayerHealth>().GainExp(exp);
+            else
+                players[1].GetComponent<PlayerHealth>().GainExp(exp);
 
             OnEnemyDeath?.Invoke();
         }
