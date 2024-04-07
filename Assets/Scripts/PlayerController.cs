@@ -24,15 +24,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* // SinglePlayer support
+         // SinglePlayer support
         axisMovement.x = Input.GetAxisRaw("Horizontal");
         axisMovement.y = Input.GetAxisRaw("Vertical");
 
         
-        */
+        
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
+        
         //Split Screen Support
-
+        /*
         if (isPlayer1)
         {
             // For Player 1's horizontal movement (A and D keys)
@@ -93,6 +94,7 @@ public class PlayerController : MonoBehaviour
                 axisMovement.y = 0;
             }
         }
+        */
 
 
     }

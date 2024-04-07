@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
+public class Arrow_old : MonoBehaviour
 {
 
     public int damage = 3;
     public float speed = 5f;
     public float lifeTime = 1f;
-    public AoEData aoeeffect;
+    public ArrowData arrowData;
     public GameObject destroyEffect;
     // Start is called before the first frame update
     void Start()
     {
         // Physics.IgnoreCollision(FindGameObjectWithTag("Player").GetComponent<Collider>(), GetComponent<Collider>());
-        this.damage = aoeeffect.damage;
-        // this.speed = aoeeffect.cooldown;
-        this.lifeTime = aoeeffect.lifeTime;
+        this.damage = arrowData.damage;
+        this.speed = arrowData.speed;
+        this.lifeTime = arrowData.lifeTime;
         Invoke("DestroyProjectile", lifeTime);
     }
 
@@ -38,7 +38,7 @@ public class Arrow : MonoBehaviour
         {
             EnemyHealth health = collider.GetComponent<EnemyHealth>();
             health.Damage(damage);
-            DestroyProjectile();
+            Destroy(gameObject);
         }
     }
 

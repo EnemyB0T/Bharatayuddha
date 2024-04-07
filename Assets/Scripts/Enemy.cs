@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     private float returnAI = 2f;
     [SerializeField]
     private float remainingTimeToReturnAI;
-    private bool isPlayer1;
+    //private bool isPlayer1;
 
     [SerializeField]
     private EnemyData data;
@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isPlayer1 = (Random.value < 0.5f);
+        //isPlayer1 = (Random.value < 0.5f);
         player = GameObject.FindGameObjectsWithTag("Player");
         playerIndex = Random.Range(0, player.Length);
         remainingTimeToReturnAI = returnAI;
@@ -66,14 +66,7 @@ public class Enemy : MonoBehaviour
     {
         if(player != null)
         {
-            if (Random.Range(1, 0) == 0)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-            }
-            else
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-            }
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
         
     }   
