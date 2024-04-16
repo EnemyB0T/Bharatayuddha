@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class EnemySpawner : MonoBehaviour
 {
-    //test
     public List<Enemies> enemies = new List<Enemies>();
     public int currWave;
     public int waveValue;
@@ -15,7 +14,8 @@ public class EnemySpawner : MonoBehaviour
     private float waveTimer;
     private float spawnInterval;
     private float spawnTimer;
-
+    private WaveManager wm;
+    private ScoreValue sv;
     [SerializeField]
     public int enemiesLeft = 0;
 
@@ -30,14 +30,32 @@ public class EnemySpawner : MonoBehaviour
     private int prevFib = 1;
     private int currFib = 1;
 
+    public int wave = 0;
 
+  
 
     // Start is called before the first frame update
     void Start()
     {
-        GenerateWave();
+        
+        wm = FindObjectOfType<WaveManager>();
+        sv = FindObjectOfType<ScoreValue>();
         _waveIntervalLeft = waveInterval;
+        
     }
+ 
+    public void GenerateWave()
+    {
+        //waveValue = currWave * waveMultiplier;
+        //GenerateEnemies();
+        //spawnInterval = waveDuration/enemiesToSpawn.Count;
+        //waveTimer = waveDuration;
+      
+    }
+
+
+
+
 
     void FixedUpdate() {
 
@@ -86,14 +104,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void GenerateWave()
-    {
-        waveValue = currWave * waveMultiplier;
-        GenerateEnemies();
-
-        spawnInterval = waveDuration/enemiesToSpawn.Count;
-        waveTimer = waveDuration;
-    }
+    
     public void GenerateEnemies()
     {
         List<GameObject> generatedEnemies = new List<GameObject>();
@@ -116,6 +127,85 @@ public class EnemySpawner : MonoBehaviour
         enemiesToSpawn = generatedEnemies;
         enemiesLeft = enemiesToSpawn.Count;
     }
+
+public void SpawnEnemy(int enemyId, int count)
+{
+    int enemiesToSpawnCount = count; 
+    List<GameObject> generatedEnemies = new List<GameObject>();
+
+    for (int i = 0; i < enemiesToSpawnCount; i++)
+    {
+        int randEnemyId = enemyId; 
+        int randEnemyCost = enemies[randEnemyId].cost;
+
+        if (waveValue - randEnemyCost >= 0)
+        {
+            generatedEnemies.Add(enemies[randEnemyId].enemyPrefab);
+            waveValue -= randEnemyCost;
+        }
+        else
+        {
+            break; 
+        }
+    }
+
+    enemiesToSpawn.Clear();
+    enemiesToSpawn = generatedEnemies;
+    enemiesLeft = enemiesToSpawn.Count;
+}
+
+public void SpawnEnemy2(int enemyId, int count)
+{
+    int enemiesToSpawnCount = count; 
+    List<GameObject> generatedEnemies = new List<GameObject>();
+
+    for (int i = 0; i < enemiesToSpawnCount; i++)
+    {
+        int randEnemyId = enemyId; 
+        int randEnemyCost = enemies[randEnemyId].cost;
+
+        if (waveValue - randEnemyCost >= 0)
+        {
+            generatedEnemies.Add(enemies[randEnemyId].enemyPrefab);
+            waveValue -= randEnemyCost;
+        }
+        else
+        {
+            break; 
+        }
+    }
+
+    enemiesToSpawn.Clear();
+    enemiesToSpawn = generatedEnemies;
+    enemiesLeft = enemiesToSpawn.Count;
+}
+
+public void SpawnEnemy3(int enemyId, int count)
+{
+    int enemiesToSpawnCount = count; 
+    List<GameObject> generatedEnemies = new List<GameObject>();
+
+    for (int i = 0; i < enemiesToSpawnCount; i++)
+    {
+        int randEnemyId = enemyId; 
+        int randEnemyCost = enemies[randEnemyId].cost;
+
+        if (waveValue - randEnemyCost >= 0)
+        {
+            generatedEnemies.Add(enemies[randEnemyId].enemyPrefab);
+            waveValue -= randEnemyCost;
+        }
+        else
+        {
+            break; 
+        }
+    }
+
+    enemiesToSpawn.Clear();
+    enemiesToSpawn = generatedEnemies;
+    enemiesLeft = enemiesToSpawn.Count;
+}
+
 }
 
 [System.Serializable]
