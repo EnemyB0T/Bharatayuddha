@@ -10,7 +10,7 @@ public class ScoreValue : MonoBehaviour
     [SerializeField]
     public TextMeshProUGUI scoreText;
     
-    public  int score;
+    public int score;
 
 private Waves w;
 private WaveManager wm;
