@@ -9,13 +9,17 @@ public class Waves : MonoBehaviour
     private WaveManager wm;
     private ScoreValue sv;
     private EnemySpawner es;
+    private BuffMenu bm;
+    private PauseMenu pm;
     // Start is called before the first frame update
     void Start()
     {
         wm = FindObjectOfType<WaveManager>();
         sv = FindObjectOfType<ScoreValue>();
         es = FindObjectOfType<EnemySpawner>();
-         es.waveValue = es.currWave * es.waveMultiplier;
+        bm = FindObjectOfType<BuffMenu>();
+        pm = FindObjectOfType<PauseMenu>();
+        es.waveValue = es.currWave * es.waveMultiplier;
         es.SpawnEnemy(wm.Wave1EnemyID, wm.Wave1EnemyCount);
         wm.WaveText.text = "Wave 1";
         es.wave = 1;
@@ -27,6 +31,7 @@ public class Waves : MonoBehaviour
 
 public void Wave2(){
     es.SpawnEnemy(wm.Wave2EnemyID, wm.Wave2EnemyCount);
+     //pm.buffMenuUI.SetActive(true);
 }
 
 public IEnumerator Wave3(){

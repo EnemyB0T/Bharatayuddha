@@ -9,6 +9,12 @@ public class Bow : MonoBehaviour
     public Transform shotPoint;
     private float timeBetweenShots;
     public float startTimeBetweenShots;
+    private MusicSFX fx;
+     void Start()
+    {
+        fx = FindObjectOfType<MusicSFX>();
+    }
+
     private void Update() {
         //weapon position
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -21,6 +27,8 @@ public class Bow : MonoBehaviour
             {
                 Instantiate(projectile, shotPoint.position, transform.rotation);
                 timeBetweenShots = startTimeBetweenShots;
+                 fx.src.clip = fx.FireSFX;
+                fx.src.Play();
             }
         }
         else
