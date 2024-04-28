@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MonaCil_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 185
+        width: 212
+        height: 159
+      alignment: 9
+      pivot: {x: 0.5227704, y: 0.01726796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece3891952baf46469bcf0fc3ccef09c
+      internalID: 2043093230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonaCil_2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 90
+        width: 145
+        height: 74
+      alignment: 9
+      pivot: {x: 0.6198508, y: 0.5913278}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a324b794e62ea947b8756fe4484085e
+      internalID: 1901847824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonaCil_3
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 8
+        width: 35
+        height: 62
+      alignment: 9
+      pivot: {x: 0.5689617, y: 0.91265786}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3438c103786ba15499318e3bc4562aa8
+      internalID: -1001403415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonaCil_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 8
+        width: 26
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5544058, y: 0.8677624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993599c9b4a69b5488b7db1885faf804
+      internalID: -1229439106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonaCil_5
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 7
+        width: 34
+        height: 69
+      alignment: 9
+      pivot: {x: 0.5283966, y: 0.9197666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f2c8f7efd67b946be6a020dc86cccd
+      internalID: -1776767739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonaCil_6
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 14
+        width: 38
+        height: 61
+      alignment: 9
+      pivot: {x: 0.550815, y: 0.9569863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3e68c8710c7964983b57ec6cb71743
+      internalID: -1173655456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,10 +252,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MonaCil_3: -1001403415
+      MonaCil_5: -1776767739
+      MonaCil_6: -1173655456
+      MonaCil_4: -1229439106
+      MonaCil_0: -206293416
+      MonaCil_2: 1901847824
+      MonaCil_1: 2043093230
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
