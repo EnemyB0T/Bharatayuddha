@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class MainMenuMusic : MonoBehaviour
 {
-    // Start is called before the first frame upda
    
- 
     public AudioSource music;
     public AudioClip MainMenu;
 
