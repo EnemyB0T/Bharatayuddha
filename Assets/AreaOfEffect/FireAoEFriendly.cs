@@ -9,4 +9,8 @@ public class FireAoEFriendly : DamageOverTime
     {
         target.GetComponent<EnemyHealth>().Damage(damageOverTime);
     }
+    public void IncreaseDamage(int amount)
+{
+    damageOverTime += amount;
+}
 }

@@ -8,7 +8,8 @@ public class AoEData : ScriptableObject
     public float cooldown;
     public int damage;
     public float lifeTime;
+    
     //public float speed; //intended for slows enemy movement speed
 
-    // public abstract void Apply(GameObject gameObject);
+   
 }

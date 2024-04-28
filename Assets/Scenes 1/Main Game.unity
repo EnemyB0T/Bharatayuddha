@@ -4976,7 +4976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1065716889
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5155,7 +5155,7 @@ MonoBehaviour:
   enemyCount: 0
   WaveText: {fileID: 1113466452}
   BuffMenu: {fileID: 1269363076}
-  Wave1TotalEnemy: 10
+  Wave1TotalEnemy: 1
   Wave1EnemyID: 3
   Wave1EnemyCount: 10
   Wave2TotalEnemy: 10
@@ -6285,6 +6285,7 @@ GameObject:
   - component: {fileID: 1269363080}
   - component: {fileID: 1269363079}
   - component: {fileID: 1269363081}
+  - component: {fileID: 1269363082}
   m_Layer: 5
   m_Name: BuffMenu
   m_TagString: Untagged
@@ -6366,9 +6367,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3111d67d4cd22e4ab9f9d0e601eecf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardPrefabs:
+  - {fileID: 1896590108}
+  - {fileID: 2090351993}
+  cardPrefabs2:
+  - {fileID: 171249827}
+  - {fileID: 1065716888}
   buffMenuUI: {fileID: 1269363076}
-  attackCard: {fileID: 1896590108}
-  healCard: {fileID: 1065716888}
+  canvasTransform: {fileID: 150103080}
+--- !u!114 &1269363082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269363076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17980e481a80d7742b0e0aa380e23d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1313958292
 GameObject:
   m_ObjectHideFlags: 0
@@ -8800,7 +8818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1896590109
 RectTransform:
   m_ObjectHideFlags: 0

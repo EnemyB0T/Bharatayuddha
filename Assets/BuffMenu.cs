@@ -5,69 +5,85 @@ using UnityEngine.SceneManagement;
 
 public class BuffMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static bool GameIsPaused = false;
-
+    public GameObject[] cardPrefabs; // Array of card prefabs
+     public GameObject[] cardPrefabs2; // Array of card prefabs
     public GameObject buffMenuUI;
-    public GameObject attackCard;
-    public GameObject healCard;
-/*     void Start()
-    {
-        Time.timeScale = 1;
-    } */
+     //public GameObject attackCard;
+     // public GameObject healCard;
+    private CardBuffs cb; // Reference to the CardBuffs script
 
-    public void Start(){
-        buffMenuUI.SetActive(false);
+    public Transform canvasTransform; // Reference to the Canvas transform
+    private List<GameObject> spawnedCards = new List<GameObject>(); // List to keep track of all spawned cards
+
+    void Start()
+    {
+        cb = FindObjectOfType<CardBuffs>(); // Find and store reference to the CardBuffs script
+        buffMenuUI.SetActive(false); // Initially hide the buff menu
     }
-public void BuffMenuUI(){
+
+    public void BuffMenuUI()
+    {
         buffMenuUI.SetActive(true);
-        Time.timeScale = 0.0f;
+        Time.timeScale = 0.0f; // Pause the game
         GameIsPaused = true;
-}
+    }
 
     public void Resume()
     {
         buffMenuUI.SetActive(false);
-        Time.timeScale = 1.0f;
+        Time.timeScale = 1.0f; // Resume the game
         GameIsPaused = false;
     }
 
     void Pause()
     {
         buffMenuUI.SetActive(true);
-        Time.timeScale = 0.0f;
+        Time.timeScale = 0.0f; // Pause the game
         GameIsPaused = true;
-        
     }
-
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0); // Load the main menu scene
     }
 
     public void QuitGame()
     {
-        Application.Quit();
+        Application.Quit(); // Quit the game application
     }
 
-   
+public void SpawnRandomCard()
+{
+    DestroyAllCards();  // Destroy all previously spawned cards
 
-     public IEnumerator SpawnRandomCard()
+    // Spawn the first card
+    int randomIndex1 = Random.Range(0, 2);
+    GameObject randomCardGO1 = Instantiate(cardPrefabs[randomIndex1], canvasTransform, false);
+    randomCardGO1.SetActive(true);
+    spawnedCards.Add(randomCardGO1);  // Add the first card to the list of spawned cards
+
+    // Spawn the second card ensuring it is not the same as the first
+    int randomIndex2;
+    do
     {
-        attackCard.SetActive(false);
-        healCard.SetActive(false);
-         yield return new WaitForSeconds(1.5f);
-        // Randomly choose which card to activate
-        int cardIndex = Random.Range(0, 2);  
-        if (cardIndex == 0)
-        {
-            attackCard.SetActive(true);
-        }
-        else
-        {
-            healCard.SetActive(true);
-        }
-    }
+        randomIndex2 = Random.Range(0, 2); // Ensure this is correct; should it be cardPrefabs2.Length?
+    } while (randomIndex2 == randomIndex1 && cardPrefabs.Length > 1); // Only loop if there is more than one option
 
+    GameObject randomCardGO2 = Instantiate(cardPrefabs2[randomIndex2], canvasTransform, false); // Should this use cardPrefabs2?
+    randomCardGO2.SetActive(true);
+    spawnedCards.Add(randomCardGO2);  // Add the second card to the list of spawned cards
+}
+
+
+    public void DestroyAllCards()
+    {
+        // Destroy all cards in the spawnedCards list
+        foreach (GameObject card in spawnedCards)
+        {
+            if (card != null)
+                Destroy(card);  // Destroy the card
+        }
+        spawnedCards.Clear();  // Clear the list after all cards have been destroyed
+    }
 }
