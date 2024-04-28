@@ -30,22 +30,29 @@ public class Waves : MonoBehaviour
     
 
 public void Wave2(){
+    StartCoroutine(pm.PauseBuff());
+    bm.SpawnRandomCard();
     es.SpawnEnemy(wm.Wave2EnemyID, wm.Wave2EnemyCount);
-     //pm.buffMenuUI.SetActive(true);
 }
 
 public IEnumerator Wave3(){
+    StartCoroutine(pm.PauseBuff());
+    bm.SpawnRandomCard();
     es.SpawnEnemy(wm.Wave3EnemyID, wm.Wave3EnemyCount);
    yield return new WaitForSeconds(5f);
     es.SpawnEnemy2(wm.Wave3EnemyID2, wm.Wave3EnemyCount2);
 }
 
 public IEnumerator Wave4(){
+    StartCoroutine(pm.PauseBuff());
+    bm.SpawnRandomCard();
     es.SpawnEnemy(wm.Wave4EnemyID, wm.Wave4EnemyCount);
    yield return new WaitForSeconds(5f);
     es.SpawnEnemy2(wm.Wave4EnemyID2, wm.Wave4EnemyCount2);
 }
 public IEnumerator Wave5(){
+    StartCoroutine(pm.PauseBuff());
+    bm.SpawnRandomCard();
     es.SpawnEnemy(wm.Wave5EnemyID, wm.Wave5EnemyCount);
    yield return new WaitForSeconds(5f);
     es.SpawnEnemy2(wm.Wave5EnemyID2, wm.Wave5EnemyCount2);
@@ -54,6 +61,8 @@ public IEnumerator Wave5(){
 }
 
 public IEnumerator Wave6(){
+    StartCoroutine(pm.PauseBuff());
+    bm.SpawnRandomCard();
     es.SpawnEnemy(wm.Wave6EnemyID, wm.Wave6EnemyCount);
    yield return new WaitForSeconds(5f);
     es.SpawnEnemy2(wm.Wave6EnemyID2, wm.Wave6EnemyCount2);
@@ -62,6 +71,8 @@ public IEnumerator Wave6(){
 }
 
 public IEnumerator Wave7(){
+    StartCoroutine(pm.PauseBuff());
+    bm.SpawnRandomCard();
     es.SpawnEnemy(wm.Wave7EnemyID, wm.Wave7EnemyCount);
    yield return new WaitForSeconds(5f);
     es.SpawnEnemy2(wm.Wave7EnemyID2, wm.Wave7EnemyCount2);
@@ -70,6 +81,8 @@ public IEnumerator Wave7(){
 }
 
 public IEnumerator Wave8(){
+    StartCoroutine(pm.PauseBuff());
+    bm.SpawnRandomCard();
     es.SpawnEnemy(wm.Wave8EnemyID, wm.Wave8EnemyCount);
    yield return new WaitForSeconds(5f);
     es.SpawnEnemy2(wm.Wave8EnemyID2, wm.Wave8EnemyCount2);
@@ -78,6 +91,8 @@ public IEnumerator Wave8(){
 }
 
 public IEnumerator Wave9(){
+    StartCoroutine(pm.PauseBuff());
+    bm.SpawnRandomCard();
     es.SpawnEnemy(wm.Wave9EnemyID, wm.Wave9EnemyCount);
    yield return new WaitForSeconds(5f);
     es.SpawnEnemy2(wm.Wave9EnemyID2, wm.Wave9EnemyCount2);
@@ -86,6 +101,8 @@ public IEnumerator Wave9(){
 }
 
 public IEnumerator Wave10(){
+    StartCoroutine(pm.PauseBuff());
+    bm.SpawnRandomCard();
     es.SpawnEnemy(wm.Wave10EnemyID, wm.Wave10EnemyCount);
    yield return new WaitForSeconds(5f);
     es.SpawnEnemy2(wm.Wave10EnemyID2, wm.Wave10EnemyCount2);

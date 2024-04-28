@@ -6,6 +6,7 @@ public class WaveManager : MonoBehaviour
 {
     public int enemyCount = 0;
     public TextMeshProUGUI WaveText;
+    public GameObject BuffMenu;
 
     //wave 1
     public int Wave1TotalEnemy;
