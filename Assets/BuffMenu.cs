@@ -60,7 +60,7 @@ public void SpawnRandomCard()
     DestroyAllCards();  // Destroy all previously spawned cards
 
     // Spawn the first card
-    int randomIndex1 = 0;//Random.Range(0, 4);
+    int randomIndex1 = Random.Range(0, 4);
     GameObject randomCardGO1 = Instantiate(cardPrefabs[randomIndex1], canvasTransform, false);
     randomCardGO1.SetActive(true);
     spawnedCards.Add(randomCardGO1);  
@@ -69,7 +69,7 @@ public void SpawnRandomCard()
     int randomIndex2;
     do
     {
-        randomIndex2 = 3;//Random.Range(0, 4); 
+        randomIndex2 = Random.Range(0, 4); 
     } while (randomIndex2 == randomIndex1 && cardPrefabs.Length > 1); 
 
     GameObject randomCardGO2 = Instantiate(cardPrefabs2[randomIndex2], canvasTransform, false); 
