@@ -41,10 +41,6 @@ public class Enemy : MonoBehaviour
             ResurrectAI();
         }
 
-        if (gotHit)
-        {
-        playerHealth.Heal(20);
-        }
     }
 
     private void SetEnemyValues()

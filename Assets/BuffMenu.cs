@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BuffMenu : MonoBehaviour
 {
+   
     public static bool GameIsPaused = false;
     public GameObject[] cardPrefabs; // Array of card prefabs
      public GameObject[] cardPrefabs2; // Array of card prefabs
@@ -15,6 +16,7 @@ public class BuffMenu : MonoBehaviour
 
     public Transform canvasTransform; // Reference to the Canvas transform
     private List<GameObject> spawnedCards = new List<GameObject>(); // List to keep track of all spawned cards
+    
 
     void Start()
     {
@@ -58,7 +60,7 @@ public void SpawnRandomCard()
     DestroyAllCards();  // Destroy all previously spawned cards
 
     // Spawn the first card
-    int randomIndex1 = 3;//Random.Range(0, 4);
+    int randomIndex1 = 0;//Random.Range(0, 4);
     GameObject randomCardGO1 = Instantiate(cardPrefabs[randomIndex1], canvasTransform, false);
     randomCardGO1.SetActive(true);
     spawnedCards.Add(randomCardGO1);  
@@ -67,7 +69,7 @@ public void SpawnRandomCard()
     int randomIndex2;
     do
     {
-        randomIndex2 = Random.Range(0, 4); 
+        randomIndex2 = 3;//Random.Range(0, 4); 
     } while (randomIndex2 == randomIndex1 && cardPrefabs.Length > 1); 
 
     GameObject randomCardGO2 = Instantiate(cardPrefabs2[randomIndex2], canvasTransform, false); 

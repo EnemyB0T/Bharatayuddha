@@ -7,20 +7,22 @@ public class CardBuffs : MonoBehaviour
     private PauseMenu pm;
     private BuffMenu bm;
     private PlayerHealth playerHealth;
-    public static bool isStealActive = false; // Static variable to check if steal is active
+    private PlayerController playerController;
+    public static bool isStealActive = false;
 
     void Start()
     {
         pm = FindObjectOfType<PauseMenu>();
         bm = FindObjectOfType<BuffMenu>();
         playerHealth = FindObjectOfType<PlayerHealth>();
+        playerController = FindObjectOfType<PlayerController>();
     }
 
     public void AttackCard()
     {
         pm.Resume();
         bm.DestroyAllCards();
-        
+
     }
 
     public void HealCard()
@@ -34,6 +36,7 @@ public class CardBuffs : MonoBehaviour
     {
         pm.Resume();
         bm.DestroyAllCards();
+        playerController.SpeedBuff(3.5f, 10);
     }
 
     public void StealCard()
@@ -46,7 +49,7 @@ public class CardBuffs : MonoBehaviour
     IEnumerator ActivateStealEffect()
     {
         isStealActive = true;
-        yield return new WaitForSeconds(5); // Steal effect lasts for 5 seconds
+        yield return new WaitForSeconds(5);
         isStealActive = false;
     }
 }

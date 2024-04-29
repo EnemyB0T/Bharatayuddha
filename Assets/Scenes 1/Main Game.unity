@@ -5655,7 +5655,7 @@ MonoBehaviour:
   enemyCount: 0
   WaveText: {fileID: 1113466452}
   BuffMenu: {fileID: 1269363076}
-  Wave1TotalEnemy: 1
+  Wave1TotalEnemy: 10
   Wave1EnemyID: 3
   Wave1EnemyCount: 10
   Wave2TotalEnemy: 10

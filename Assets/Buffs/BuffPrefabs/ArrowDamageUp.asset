@@ -12,7 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acba128c0a35495419c16d0634259515, type: 3}
   m_Name: ArrowDamageUp
   m_EditorClassIdentifier: 
-  speed: 0
   damage: 0
-  lifeTime: 0
-  newDamage: 0
