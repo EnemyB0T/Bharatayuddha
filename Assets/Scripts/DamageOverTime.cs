@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class DamageOverTime : ScriptableObject
 {
-    public int damageOverTime;
+    public float damageOverTime;
     public float cooldown;
     public GameObject effect;
     public int timeToLive;

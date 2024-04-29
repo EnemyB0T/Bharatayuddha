@@ -6,7 +6,7 @@ using UnityEngine;
 public class AoEData : ScriptableObject
 {
     public float cooldown;
-    public int damage;
+    public float damage;
     public float lifeTime;
     
     //public float speed; //intended for slows enemy movement speed

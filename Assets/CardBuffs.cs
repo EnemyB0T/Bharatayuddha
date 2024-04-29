@@ -8,6 +8,9 @@ public class CardBuffs : MonoBehaviour
     private BuffMenu bm;
     private PlayerHealth playerHealth;
     private PlayerController playerController;
+    [SerializeField] private AttackArea attackArea;
+    [SerializeField] private FireAoEFriendly fAoE;
+    [SerializeField] private float dotBuff;
     public static bool isStealActive = false;
 
     void Start()
@@ -22,7 +25,8 @@ public class CardBuffs : MonoBehaviour
     {
         pm.Resume();
         bm.DestroyAllCards();
-
+        attackArea.damage += 3;
+        fAoE.damageOverTime += dotBuff;
     }
 
     public void HealCard()

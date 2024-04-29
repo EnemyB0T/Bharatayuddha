@@ -5,7 +5,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
 
-    public int damage = 3;
+    public float damage = 3;
     public float speed = 5f;
     public float lifeTime = 1f;
     public AoEData aoeeffect;

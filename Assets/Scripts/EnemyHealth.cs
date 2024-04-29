@@ -9,10 +9,10 @@ public class EnemyHealth : MonoBehaviour
     private PlayerHealth playerHealth;
     private CardBuffs cb;
 
-    [SerializeField] public int health = 100;
+    [SerializeField] public float health = 100;
 
     [SerializeField] GameObject waveLeft;
-    public int MAX_HEALTH = 100;
+    public float MAX_HEALTH = 100;
     [SerializeField] public float exp = 1f;
 
     EnemySpawner enemySpawner;
@@ -53,14 +53,15 @@ void Start(){
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    public void Damage(int amount)
+    public void Damage(float amount)
     {
+        
         if(amount < 0)
         {
             throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
         }
         if (CardBuffs.isStealActive == true){
-        playerHealth.Heal(amount);
+        //playerHealth.Heal(amount);
         }
         this.health -= amount;
         StartCoroutine(VisualIndicator(Color.red));
@@ -76,7 +77,7 @@ void Start(){
         }
     }
 
-    public void Heal(int amount)
+    public void Heal(float amount)
     {
         if (amount < 0)
         {

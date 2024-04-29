@@ -5134,7 +5134,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1614225109671854702, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
   m_PrefabInstance: {fileID: 1614225110360505277}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1698268320}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8f7fa9da1452c446bf0bfa188823bf1, type: 3}
@@ -5145,7 +5145,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1614225109671854696, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
   m_PrefabInstance: {fileID: 1614225110360505277}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1698268320}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06f23cfb39c931b48b29b4183f64fe99, type: 3}
@@ -6647,6 +6647,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17980e481a80d7742b0e0aa380e23d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackArea: {fileID: 1138596047}
+  fAoE: {fileID: 11400000, guid: 62014fbc376ff29419b9b0fb841dab59, type: 2}
+  dotBuff: 0.2
 --- !u!4 &1220382055
 Transform:
   m_ObjectHideFlags: 0
@@ -6895,6 +6898,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17980e481a80d7742b0e0aa380e23d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackArea: {fileID: 0}
+  fAoE: {fileID: 0}
+  dotBuff: 0
 --- !u!1 &1313958292
 GameObject:
   m_ObjectHideFlags: 0
@@ -8588,6 +8594,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698109736}
   m_CullTransparentMesh: 1
+--- !u!1 &1698268320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1614225109671854701, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
+  m_PrefabInstance: {fileID: 1614225110360505277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1698268326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698268320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d93f6cc1e003ae4aace0e2036be60a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseFire: {fileID: 11400000, guid: 4f7ccd39c4c09a744a9c37b605777454, type: 2}
+  appliedFire: {fileID: 11400000, guid: 62014fbc376ff29419b9b0fb841dab59, type: 2}
 --- !u!1 &1703375048
 GameObject:
   m_ObjectHideFlags: 0
