@@ -5,33 +5,24 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
-    [SerializeField]
-    private int damage = 5;
-    [SerializeField]
-    private float speed = 1.5f;
-    [SerializeField]
-    private float returnAI = 2f;
-    [SerializeField]
-    private float remainingTimeToReturnAI;
-    //private bool isPlayer1;
-
-    [SerializeField]
-    private EnemyData data;
+    [SerializeField] private int damage = 5;
+    [SerializeField] private float speed = 1.5f;
+    [SerializeField] private float returnAI = 2f;
+    [SerializeField] private float remainingTimeToReturnAI;
+    [SerializeField] private EnemyData data;
 
     private bool gotHit = false;
     private bool isHit = false;
     private GameObject[] player;
     private int playerIndex;
-    
-    //comment
+    private PlayerHealth playerHealth;
 
     public WaveManager waveManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        //isPlayer1 = (Random.value < 0.5f);
+        playerHealth = FindObjectOfType<PlayerHealth>();
         player = GameObject.FindGameObjectsWithTag("Player");
         playerIndex = Random.Range(0, player.Length);
         remainingTimeToReturnAI = returnAI;
@@ -46,15 +37,16 @@ public class Enemy : MonoBehaviour
             Swarm(player[playerIndex]);
         }
         else
+        {
             ResurrectAI();
-        // if(GameObject.Find("Knight") == null)
-        // {
-        //     Destroy(gameObject);
-        // }
+        }
 
-        
+        if (gotHit)
+        {
+        playerHealth.Heal(20);
+        }
     }
-    
+
     private void SetEnemyValues()
     {
         GetComponent<EnemyHealth>().SetHealth(data.hp, data.hp, data.exp);
@@ -68,13 +60,13 @@ public class Enemy : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
-        
     }   
 
     public void Hit()
     {
         Debug.Log("Hit() accessed");
         this.gotHit = true;
+       
     }
 
     private void ResurrectAI()
@@ -90,17 +82,12 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(!isHit && !gotHit)
+        if(!isHit && !gotHit && collider.CompareTag("Player"))
         {
-            if (collider.CompareTag("Player"))
+            if(collider.GetComponent<PlayerHealth>() != null)
             {
-                if(collider.GetComponent<PlayerHealth>() != null)
-                {
-                    collider.GetComponent<PlayerHealth>().Damage(damage);
-                    isHit = true;
-                    // this.GetComponent<EnemyHealth>().Damage(10000);
-                    // opponentController.opponentHasDied();
-                }
+                collider.GetComponent<PlayerHealth>().Damage(damage);
+                isHit = true;
             }
         }
     }

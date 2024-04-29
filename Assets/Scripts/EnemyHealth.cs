@@ -6,7 +6,8 @@ using System;
 public class EnemyHealth : MonoBehaviour
 {
     public GameObject FloatingTextPrefab;
-
+    private PlayerHealth playerHealth;
+    private CardBuffs cb;
 
     [SerializeField] public int health = 100;
 
@@ -20,7 +21,10 @@ public class EnemyHealth : MonoBehaviour
 
     public static Action OnPlayerDeath;
     public static Action OnEnemyDeath;
-
+void Start(){
+    playerHealth = FindObjectOfType<PlayerHealth>();
+    cb = FindObjectOfType<CardBuffs>();
+}
     // Update is called once per frame
     void Update()
     {
@@ -55,7 +59,9 @@ public class EnemyHealth : MonoBehaviour
         {
             throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
         }
-
+        if (CardBuffs.isStealActive == true){
+        playerHealth.Heal(amount);
+        }
         this.health -= amount;
         StartCoroutine(VisualIndicator(Color.red));
 

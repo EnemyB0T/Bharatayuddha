@@ -15,4 +15,3 @@ MonoBehaviour:
   cooldown: 0.5
   damage: 1
   lifeTime: 1
-  damageBuffAmount: 1

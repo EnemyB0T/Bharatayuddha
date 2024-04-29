@@ -4,52 +4,49 @@ using UnityEngine;
 
 public class CardBuffs : MonoBehaviour
 {
-     private PauseMenu pm;
-     private BuffMenu bm;
+    private PauseMenu pm;
+    private BuffMenu bm;
+    private PlayerHealth playerHealth;
+    public static bool isStealActive = false; // Static variable to check if steal is active
 
-     
-    // Start is called before the first frame update
     void Start()
     {
- 
-    pm = FindObjectOfType<PauseMenu>();
-    bm = FindObjectOfType<BuffMenu>();
-    
+        pm = FindObjectOfType<PauseMenu>();
+        bm = FindObjectOfType<BuffMenu>();
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AttackCard()
     {
+        pm.Resume();
+        bm.DestroyAllCards();
         
     }
 
+    public void HealCard()
+    {
+        pm.Resume();
+        bm.DestroyAllCards();
+        playerHealth.Heal(20);
+    }
 
-    public void AttackCard(){
-       
+    public void SpeedCard()
+    {
         pm.Resume();
         bm.DestroyAllCards();
     }
 
-      public void HealCard(){
-         
+    public void StealCard()
+    {
         pm.Resume();
         bm.DestroyAllCards();
-         
+        StartCoroutine(ActivateStealEffect());
     }
 
-    
-      public void SpeedCard(){
-         
-        pm.Resume();
-        bm.DestroyAllCards();
-         
+    IEnumerator ActivateStealEffect()
+    {
+        isStealActive = true;
+        yield return new WaitForSeconds(5); // Steal effect lasts for 5 seconds
+        isStealActive = false;
     }
-       public void StealCard(){
-         
-        pm.Resume();
-        bm.DestroyAllCards();
-         
-    }
-
-
 }
