@@ -37,5 +37,19 @@ public class CardBuffs : MonoBehaviour
          
     }
 
+    
+      public void SpeedCard(){
+         
+        pm.Resume();
+        bm.DestroyAllCards();
+         
+    }
+       public void StealCard(){
+         
+        pm.Resume();
+        bm.DestroyAllCards();
+         
+    }
+
 
 }

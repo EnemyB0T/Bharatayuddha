@@ -58,21 +58,21 @@ public void SpawnRandomCard()
     DestroyAllCards();  // Destroy all previously spawned cards
 
     // Spawn the first card
-    int randomIndex1 = Random.Range(0, 2);
+    int randomIndex1 = Random.Range(0, 4);
     GameObject randomCardGO1 = Instantiate(cardPrefabs[randomIndex1], canvasTransform, false);
     randomCardGO1.SetActive(true);
-    spawnedCards.Add(randomCardGO1);  // Add the first card to the list of spawned cards
+    spawnedCards.Add(randomCardGO1);  
 
     // Spawn the second card ensuring it is not the same as the first
     int randomIndex2;
     do
     {
-        randomIndex2 = Random.Range(0, 2); // Ensure this is correct; should it be cardPrefabs2.Length?
-    } while (randomIndex2 == randomIndex1 && cardPrefabs.Length > 1); // Only loop if there is more than one option
+        randomIndex2 = Random.Range(0, 4); 
+    } while (randomIndex2 == randomIndex1 && cardPrefabs.Length > 1); 
 
-    GameObject randomCardGO2 = Instantiate(cardPrefabs2[randomIndex2], canvasTransform, false); // Should this use cardPrefabs2?
+    GameObject randomCardGO2 = Instantiate(cardPrefabs2[randomIndex2], canvasTransform, false); 
     randomCardGO2.SetActive(true);
-    spawnedCards.Add(randomCardGO2);  // Add the second card to the list of spawned cards
+    spawnedCards.Add(randomCardGO2);  
 }
 
 
