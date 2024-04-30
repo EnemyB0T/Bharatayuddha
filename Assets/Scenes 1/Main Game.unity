@@ -6377,7 +6377,9 @@ MonoBehaviour:
   attackArea: {fileID: 1138596047}
   levelUpIncreaseDamage: 1
   levelUpIncreaseHealth: 10
+  levelUpIncreaseAoE: 0.2
   arrow: {fileID: 11400000, guid: 23f8c290b8d7bc049ba1061e51abf085, type: 2}
+  fAoE: {fileID: 0}
 --- !u!1 &1196756331
 GameObject:
   m_ObjectHideFlags: 0
@@ -9280,7 +9282,9 @@ MonoBehaviour:
   attackArea: {fileID: 1138596047}
   levelUpIncreaseDamage: 1
   levelUpIncreaseHealth: 10
+  levelUpIncreaseAoE: 0.2
   arrow: {fileID: 11400000, guid: 23f8c290b8d7bc049ba1061e51abf085, type: 2}
+  fAoE: {fileID: 11400000, guid: 62014fbc376ff29419b9b0fb841dab59, type: 2}
 --- !u!114 &1834179844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11067,7 +11071,11 @@ PrefabInstance:
     - target: {fileID: 1614225109671854696, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
       propertyPath: expBar
       value: 
-      objectReference: {fileID: 1195035275}
+      objectReference: {fileID: 1834179843}
+    - target: {fileID: 1614225109671854696, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
+      propertyPath: maxExp
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1614225109671854696, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
       propertyPath: healthBar
       value: 
@@ -11136,6 +11144,10 @@ PrefabInstance:
       propertyPath: projectile
       value: 
       objectReference: {fileID: 5090719435639714885, guid: c7e885ca5e7924c45ab75412b5ba094a, type: 3}
+    - target: {fileID: 1614225109914695843, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1614225109914695846, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
       propertyPath: m_IsActive
       value: 0

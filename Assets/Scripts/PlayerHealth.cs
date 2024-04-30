@@ -13,8 +13,10 @@ public class PlayerHealth : MonoBehaviour
     public int buffedHealth = 100;
 
     public int currentExp = 0;
-    public int maxExp = 100;
+    public int maxExp = 10;
     public int currentLevel = 0;
+
+    private int fibonacci = 1;
 
     public static Action OnPlayerDeath;
     public static Action OnEnemyDeath;
@@ -145,9 +147,33 @@ public class PlayerHealth : MonoBehaviour
 
     public void GainExp(float acquiredExp)
     {
+        currentExp += Mathf.RoundToInt(acquiredExp);
         Debug.Log("accessed GainExp");
         expBar.AddExp(acquiredExp);
         Debug.Log("Added Exp");
+        if (currentExp >= maxExp)
+        {
+            int temp = currentExp - maxExp;
+            maxExp += Fibonacchi(fibonacci++);
+            Debug.Log(maxExp);
+            expBar.SetMaxExp(maxExp, temp);
+            currentExp = temp;
+        }
+        
+    }
+
+    private int Fibonacchi(int fib)
+    {
+        int a = 1, b = 1, c = 0;
+        for(int i = 2; i < fib+2; i++)
+        {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        Debug.Log(c);
+        return c;
+        
     }
 
     private void Die()

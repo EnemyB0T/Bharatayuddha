@@ -14,13 +14,15 @@ public class ExpBar : MonoBehaviour
     public AttackArea attackArea;
     public int levelUpIncreaseDamage = 1;
     public int levelUpIncreaseHealth = 10;
+    public float levelUpIncreaseAoE = 0.2f;
     public ArrowData arrow;
+    public FireAoEFriendly fAoE;
 
 
     public void SetMaxExp(int maxExp, int exp)
     {
         slider.maxValue = maxExp;
-        slider.value = 0;
+        slider.value = exp;
     }
 
     public void SetExp(int exp)
@@ -39,6 +41,7 @@ public class ExpBar : MonoBehaviour
             
             //level up code here --
             attackArea.damage += levelUpIncreaseDamage;
+            fAoE.damageOverTime += levelUpIncreaseAoE;
             playerHealth.SetHealth(playerHealth.health + levelUpIncreaseHealth, playerHealth.health);
             arrow.damage += levelUpIncreaseDamage;
 
