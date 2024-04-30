@@ -61,7 +61,9 @@ void Start(){
             throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
         }
         if (CardBuffs.isStealActive == true){
-        //playerHealth.Heal(amount);
+            int healInt = Mathf.RoundToInt(amount);
+
+            playerHealth.Heal(healInt);
         }
         this.health -= amount;
         StartCoroutine(VisualIndicator(Color.red));
