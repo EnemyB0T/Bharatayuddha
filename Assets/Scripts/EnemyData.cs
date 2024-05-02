@@ -8,6 +8,6 @@ public class EnemyData : ScriptableObject {
     public int damage;
     public float speed;
     public float exp;
-    
+    public int element; //0 - Hydro, 1 - Pyro, 2 - Dendro
 }
 

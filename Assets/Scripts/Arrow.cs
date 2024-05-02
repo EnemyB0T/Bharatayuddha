@@ -8,6 +8,7 @@ public class Arrow : MonoBehaviour
     public float damage = 3;
     public float speed = 5f;
     public float lifeTime = 1f;
+    public int element = 1; //pyro
     public AoEData aoeeffect;
     public GameObject destroyEffect;
     // Start is called before the first frame update
@@ -37,7 +38,7 @@ public class Arrow : MonoBehaviour
         if(collider.GetComponent<EnemyHealth>() != null)
         {
             EnemyHealth health = collider.GetComponent<EnemyHealth>();
-            health.Damage(damage);
+            health.Damage(damage, element);
             DestroyProjectile();
         }
     }

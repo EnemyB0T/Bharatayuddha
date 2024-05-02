@@ -16,3 +16,4 @@ MonoBehaviour:
   damage: 15
   speed: 1
   exp: 2
+  element: 1

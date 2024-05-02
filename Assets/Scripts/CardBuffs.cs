@@ -21,6 +21,11 @@ public class CardBuffs : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
     }
 
+    public bool isLifeSteal()
+    {
+        return isStealActive;
+    }
+
     public void AttackCard()
     {
         pm.Resume();

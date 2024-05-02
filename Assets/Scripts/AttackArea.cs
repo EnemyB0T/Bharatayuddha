@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackArea : MonoBehaviour
 {
     public int damage = 3;
+    public int element = 2; //Dendro
 
     public Animator animator;
 
@@ -13,7 +14,7 @@ public class AttackArea : MonoBehaviour
         if(collider.GetComponent<EnemyHealth>() != null)
         {
             EnemyHealth health = collider.GetComponent<EnemyHealth>();
-            health.Damage(damage);
+            health.Damage(damage, element);
             Enemy enemy = collider.GetComponent<Enemy>();
             enemy.Hit();
         }

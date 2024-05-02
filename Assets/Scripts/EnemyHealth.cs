@@ -7,13 +7,14 @@ public class EnemyHealth : MonoBehaviour
 {
     public GameObject FloatingTextPrefab;
     private PlayerHealth playerHealth;
-    private CardBuffs cb;
+    public CardBuffs cb;
 
     [SerializeField] public float health = 100;
 
     [SerializeField] GameObject waveLeft;
     public float MAX_HEALTH = 100;
     [SerializeField] public float exp = 1f;
+    public int element = 0;
 
     EnemySpawner enemySpawner;
     [SerializeField]
@@ -21,10 +22,10 @@ public class EnemyHealth : MonoBehaviour
 
     public static Action OnPlayerDeath;
     public static Action OnEnemyDeath;
-void Start(){
-    playerHealth = FindObjectOfType<PlayerHealth>();
-    cb = FindObjectOfType<CardBuffs>();
-}
+    void Start(){
+        playerHealth = FindObjectOfType<PlayerHealth>();
+        cb = FindObjectOfType<CardBuffs>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -39,11 +40,13 @@ void Start(){
         }
     }
 
-    public void SetHealth(int maxHealth, int health, float exp)
+
+    public void SetHealth(int maxHealth, int health, float exp, int element)
     {
         this.MAX_HEALTH = maxHealth;
         this.health = health;
         this.exp = exp;
+        this.element = element;
     }
 
     private IEnumerator VisualIndicator(Color color)
@@ -53,14 +56,25 @@ void Start(){
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    public void Damage(float amount)
+    public void Damage(float amount, int elementalDamage)
     {
-        
+        float multiplier = 1f;
+        //if weakness
+        if ((elementalDamage + 3 + 1)%3 == element)
+        {
+            multiplier = 2f;
+        }
+        //if resist
+        else if((elementalDamage + 3 - 1)%3 == element)
+        {
+            multiplier = 0.5f;
+        }
+        amount *= multiplier;
         if(amount < 0)
         {
             throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
         }
-        if (CardBuffs.isStealActive == true){
+        if (cb.isLifeSteal()){
             int healInt = Mathf.RoundToInt(amount);
 
             playerHealth.Heal(healInt);

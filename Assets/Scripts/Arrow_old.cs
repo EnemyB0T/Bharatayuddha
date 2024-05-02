@@ -37,7 +37,7 @@ public class Arrow_old : MonoBehaviour
         if(collider.GetComponent<EnemyHealth>() != null)
         {
             EnemyHealth health = collider.GetComponent<EnemyHealth>();
-            health.Damage(damage);
+            health.Damage(damage, 1);
             Destroy(gameObject);
         }
     }

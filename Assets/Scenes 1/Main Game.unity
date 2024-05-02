@@ -9278,7 +9278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1834179844}
   accumulatedLevel: 0
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 990673365}
   attackArea: {fileID: 1138596047}
   levelUpIncreaseDamage: 1
   levelUpIncreaseHealth: 10
@@ -11084,6 +11084,14 @@ PrefabInstance:
       propertyPath: healthValue
       value: 
       objectReference: {fileID: 1725683513}
+    - target: {fileID: 1614225109671854698, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 12.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614225109671854698, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 13.51
+      objectReference: {fileID: 0}
     - target: {fileID: 1614225109671854700, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -11147,6 +11155,10 @@ PrefabInstance:
     - target: {fileID: 1614225109914695843, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614225109914695846, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
+      propertyPath: m_Name
+      value: Fire
       objectReference: {fileID: 0}
     - target: {fileID: 1614225109914695846, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
       propertyPath: m_IsActive
