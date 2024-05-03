@@ -12,6 +12,7 @@ public class ExpBar : MonoBehaviour
     //Stats to be buffed
     public PlayerHealth playerHealth;
     public AttackArea attackArea;
+    public List<DendroAttack> dendroAttacks = new List<DendroAttack>();
     public int levelUpIncreaseDamage = 1;
     public int levelUpIncreaseHealth = 10;
     public float levelUpIncreaseAoE = 0.2f;
@@ -41,6 +42,8 @@ public class ExpBar : MonoBehaviour
             
             //level up code here --
             attackArea.damage += levelUpIncreaseDamage;
+            foreach(DendroAttack attack in dendroAttacks)
+                attack.damage += levelUpIncreaseDamage;
             fAoE.damageOverTime += levelUpIncreaseAoE;
             playerHealth.SetHealth(playerHealth.health + levelUpIncreaseHealth, playerHealth.health);
             arrow.damage += levelUpIncreaseDamage;
