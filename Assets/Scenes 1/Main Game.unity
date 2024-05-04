@@ -8676,6 +8676,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseFire: {fileID: 11400000, guid: 4f7ccd39c4c09a744a9c37b605777454, type: 2}
   appliedFire: {fileID: 11400000, guid: 62014fbc376ff29419b9b0fb841dab59, type: 2}
+--- !u!114 &1698268332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698268320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb8edfeffefc904a89adad4f0ba5692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ws: {fileID: 0}
+  Dendro: {fileID: 21300000, guid: 1363fd28b42f96248a796f538692ab53, type: 3}
+  Pyro: {fileID: 21300000, guid: f197838ed070a2044bd69867164dcea8, type: 3}
+  Hydro: {fileID: 21300000, guid: db89bb0fda6adcd4c8c05a6ad67a7a4f, type: 3}
 --- !u!1 &1703375048
 GameObject:
   m_ObjectHideFlags: 0
@@ -11270,6 +11286,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1614225109000056634, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614225109000056634, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
+      propertyPath: selectedWeapon
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1614225109671854693, guid: 7e59d46a4e8df7c44b35fac3654bfa5c, type: 3}
