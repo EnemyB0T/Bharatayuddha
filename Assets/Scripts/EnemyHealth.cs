@@ -6,6 +6,7 @@ using System;
 public class EnemyHealth : MonoBehaviour
 {
     public GameObject FloatingTextPrefab;
+    public GameObject FloatingTextPrefabYellow;
     private PlayerHealth playerHealth;
     public CardBuffs cb;
 
@@ -88,7 +89,13 @@ public class EnemyHealth : MonoBehaviour
         }
         if(FloatingTextPrefab && health >= 0)
         {
-            var go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+            GameObject go;
+            if (multiplier == 2f){
+            go = Instantiate(FloatingTextPrefabYellow, transform.position, Quaternion.identity, transform);
+
+            }else{
+            go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
+            }
             go.GetComponent<TextMesh>().text = amount.ToString();
         }
     }

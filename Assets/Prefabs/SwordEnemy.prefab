@@ -203,8 +203,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloatingTextPrefab: {fileID: 2329487668371207131, guid: bf6665ce0c46b834aac1446e338c7d9e, type: 3}
+  FloatingTextPrefabYellow: {fileID: 2329487668371207131, guid: aeefde5840e1d574e8e64deece5dc180, type: 3}
+  cb: {fileID: 0}
   health: 100
   waveLeft: {fileID: 0}
   MAX_HEALTH: 100
   exp: 1
+  element: 0
   spawner: {fileID: 0}
