@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public Animator animator;
 
+    public bool movingLeft = false;
+    public bool movingRight = true;
+
     public bool isPlayer1 = true;
     private Vector2 axisMovement;
 
@@ -113,8 +116,8 @@ public class PlayerController : MonoBehaviour
 
     private void CheckForFlipping()
     {
-        bool movingLeft = axisMovement.x < 0;
-        bool movingRight = axisMovement.x > 0;
+        movingLeft = axisMovement.x < 0;
+        movingRight = axisMovement.x > 0;
 
         if(movingLeft && transform.localScale.x > 0)
         {
