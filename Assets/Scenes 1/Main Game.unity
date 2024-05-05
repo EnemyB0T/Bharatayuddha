@@ -1686,7 +1686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -326, y: 124}
+  m_AnchoredPosition: {x: -120, y: 119}
   m_SizeDelta: {x: 248.98, y: 49.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375152394
@@ -3411,7 +3411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 317.4, y: 3.6000137}
+  m_AnchoredPosition: {x: 325, y: -1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &587877927
@@ -3630,7 +3630,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -231, y: 33.815}
+  m_AnchoredPosition: {x: -66, y: 33}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &723190257
@@ -4983,7 +4983,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 254, y: 4}
+  m_AnchoredPosition: {x: 266, y: 0}
   m_SizeDelta: {x: 248.98, y: 49.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &944652241
@@ -5578,7 +5578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -455.6, y: -43.80001}
+  m_AnchoredPosition: {x: -287, y: -41}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &995041851
@@ -5972,48 +5972,48 @@ MonoBehaviour:
   Wave4EnemyCount: 10
   Wave4EnemyID2: 3
   Wave4EnemyCount2: 10
-  Wave5TotalEnemy: 16
+  Wave5TotalEnemy: 21
   Wave5EnemyID: 1
   Wave5EnemyCount: 7
   Wave5EnemyID2: 2
   Wave5EnemyCount2: 7
-  Wave5EnemyID3: 0
-  Wave5EnemyCount3: 2
-  Wave6TotalEnemy: 16
+  Wave5EnemyID3: 3
+  Wave5EnemyCount3: 7
+  Wave6TotalEnemy: 30
   Wave6EnemyID: 1
-  Wave6EnemyCount: 7
+  Wave6EnemyCount: 10
   Wave6EnemyID2: 2
-  Wave6EnemyCount2: 7
-  Wave6EnemyID3: 0
-  Wave6EnemyCount3: 2
-  Wave7TotalEnemy: 17
-  Wave7EnemyID: 2
-  Wave7EnemyCount: 7
-  Wave7EnemyID2: 3
-  Wave7EnemyCount2: 7
-  Wave7EnemyID3: 0
-  Wave7EnemyCount3: 3
-  Wave8TotalEnemy: 16
+  Wave6EnemyCount2: 10
+  Wave6EnemyID3: 3
+  Wave6EnemyCount3: 10
+  Wave7TotalEnemy: 30
+  Wave7EnemyID: 1
+  Wave7EnemyCount: 10
+  Wave7EnemyID2: 2
+  Wave7EnemyCount2: 10
+  Wave7EnemyID3: 3
+  Wave7EnemyCount3: 10
+  Wave8TotalEnemy: 30
   Wave8EnemyID: 1
-  Wave8EnemyCount: 7
-  Wave8EnemyID2: 3
-  Wave8EnemyCount2: 7
-  Wave8EnemyID3: 4
-  Wave8EnemyCount3: 2
-  Wave9TotalEnemy: 10
-  Wave9EnemyID: 1
-  Wave9EnemyCount: 7
-  Wave9EnemyID2: 0
-  Wave9EnemyCount2: 2
-  Wave9EnemyID3: 4
-  Wave9EnemyCount3: 2
-  Wave10TotalEnemy: 15
+  Wave8EnemyCount: 10
+  Wave8EnemyID2: 2
+  Wave8EnemyCount2: 10
+  Wave8EnemyID3: 3
+  Wave8EnemyCount3: 10
+  Wave9TotalEnemy: 30
+  Wave9EnemyID: 2
+  Wave9EnemyCount: 10
+  Wave9EnemyID2: 3
+  Wave9EnemyCount2: 10
+  Wave9EnemyID3: 2
+  Wave9EnemyCount3: 10
+  Wave10TotalEnemy: 40
   Wave10EnemyID: 1
-  Wave10EnemyCount: 7
-  Wave10EnemyID2: 0
-  Wave10EnemyCount2: 4
-  Wave10EnemyID3: 4
-  Wave10EnemyCount3: 4
+  Wave10EnemyCount: 10
+  Wave10EnemyID2: 2
+  Wave10EnemyCount2: 20
+  Wave10EnemyID3: 3
+  Wave10EnemyCount3: 10
 --- !u!4 &1078707952
 Transform:
   m_ObjectHideFlags: 0
@@ -6077,7 +6077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -289, y: 34}
+  m_AnchoredPosition: {x: -123, y: 35}
   m_SizeDelta: {x: 248.98, y: 49.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1085896070
@@ -10971,7 +10971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -455.6, y: 37.753}
+  m_AnchoredPosition: {x: -288, y: 36}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971800548
