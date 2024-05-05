@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public bool movingLeft = false;
     public bool movingRight = true;
+    public bool facingLeft = false;
 
     public bool isPlayer1 = true;
     private Vector2 axisMovement;
@@ -122,10 +123,12 @@ public class PlayerController : MonoBehaviour
         if(movingLeft && transform.localScale.x > 0)
         {
             transform.localScale = new Vector3(-1f*transform.localScale.x, transform.localScale.y);
+            facingLeft = true;
         }
         if(movingRight && transform.localScale.x < 0)
         {
             transform.localScale = new Vector3(-1f*transform.localScale.x, transform.localScale.y);
+            facingLeft = false;
         } 
     }
 

@@ -695,7 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170732ff4e810ac43881f634347956b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0
+  offset: 180
   data: {fileID: 0}
   shotPoint: {fileID: 0}
   area: 0
@@ -715,3 +715,4 @@ MonoBehaviour:
   damage: 3
   lifeTime: 1
   element: 2
+  offset: 180
