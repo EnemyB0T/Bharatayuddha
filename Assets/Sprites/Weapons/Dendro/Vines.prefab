@@ -714,3 +714,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 3
   lifeTime: 1
+  element: 2
