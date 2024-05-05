@@ -13,7 +13,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartGameButton()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void GoToMainMenu()
@@ -22,7 +22,7 @@ public class MainMenuUI : MonoBehaviour
     }
     public void CreditsButton()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 
     public void ExitGameButton()

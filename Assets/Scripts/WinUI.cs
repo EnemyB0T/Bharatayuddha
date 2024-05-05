@@ -34,7 +34,7 @@ public class WinUI : MonoBehaviour
     public void RetryGame()
     {
         SceneManager.LoadScene(0);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
         print("Retry button is working!");
     }
 
