@@ -22,14 +22,16 @@ public class DendroShootPoint : MonoBehaviour
         //weapon position
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        bool rotate = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().movingLeft;
+        bool rotate = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().facingLeft;
         if (rotate)
         {
             transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+            //Debug.Log("dendro access left");
         }
         else
         {
             transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+            //Debug.Log("dendro access RIGHT");
         }
         
 
