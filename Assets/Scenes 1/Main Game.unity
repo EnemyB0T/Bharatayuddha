@@ -5979,7 +5979,7 @@ MonoBehaviour:
   Wave5EnemyCount2: 7
   Wave5EnemyID3: 3
   Wave5EnemyCount3: 7
-  Wave6TotalEnemy: 30
+  Wave6TotalEnemy: 28
   Wave6EnemyID: 1
   Wave6EnemyCount: 10
   Wave6EnemyID2: 2
@@ -5993,21 +5993,21 @@ MonoBehaviour:
   Wave7EnemyCount2: 10
   Wave7EnemyID3: 3
   Wave7EnemyCount3: 10
-  Wave8TotalEnemy: 30
+  Wave8TotalEnemy: 25
   Wave8EnemyID: 1
   Wave8EnemyCount: 10
   Wave8EnemyID2: 2
   Wave8EnemyCount2: 10
   Wave8EnemyID3: 3
   Wave8EnemyCount3: 10
-  Wave9TotalEnemy: 30
+  Wave9TotalEnemy: 20
   Wave9EnemyID: 2
   Wave9EnemyCount: 10
   Wave9EnemyID2: 3
   Wave9EnemyCount2: 10
   Wave9EnemyID3: 2
   Wave9EnemyCount3: 10
-  Wave10TotalEnemy: 40
+  Wave10TotalEnemy: 30
   Wave10EnemyID: 1
   Wave10EnemyCount: 10
   Wave10EnemyID2: 2
