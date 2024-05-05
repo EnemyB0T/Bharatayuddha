@@ -9,6 +9,7 @@ public class VineData : MonoBehaviour
     public float lifeTime = 1f;
     //public ArrowData arrowData;
     //public GameObject destroyEffect;
+    public int element = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,7 @@ public class VineData : MonoBehaviour
         if (collider.GetComponent<EnemyHealth>() != null)
         {
             EnemyHealth health = collider.GetComponent<EnemyHealth>();
-            health.Damage(damage, 1);
+            health.Damage(damage, element);
             //Destroy(gameObject);
         }
     }
