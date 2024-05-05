@@ -183,7 +183,7 @@ public class PlayerHealth : MonoBehaviour
 
         if(this.CompareTag("Player"))
         {
-            GameObject.Find("EnemiesKilledValue").GetComponent<ScoreValue>().Deactivate();
+            //GameObject.Find("EnemiesKilledValue").GetComponent<ScoreValue>().Deactivate();
 
             Time.timeScale = 0;
             OnPlayerDeath?.Invoke();
