@@ -57,68 +57,63 @@ public class EnemyHealth : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 
-    public void Damage(float amount, int elementalDamage)
+   public void Damage(float amount, int elementalDamage)
+{
+    float multiplier = 1f;
+
+    // If weakness
+    if ((elementalDamage + 3 + 1) % 3 == element)
     {
-        float multiplier = 1f;
-        //if weakness
-        if ((elementalDamage + 3 + 1)%3 == element)
-        {
-            multiplier = 2f;
-        }
-        //if resist
-        else if((elementalDamage + 3 - 1)%3 == element)
-        {
-            multiplier = 0.5f;
-        }
-        amount *= multiplier;
-        if(amount < 0)
-        {
-            throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
-        }
-        if (cb.isLifeSteal()){
-            int healInt = Mathf.RoundToInt(amount);
-
-            playerHealth.Heal(healInt);
-        }
-        this.health -= amount;
-        StartCoroutine(VisualIndicator(Color.red));
-
-        if(health <= 0)
-        {
-            Die();
-        }
-        if(FloatingTextPrefab && health >= 0)
-        {
-            GameObject go;
-            if (multiplier == 2f){
-            go = Instantiate(FloatingTextPrefabYellow, transform.position, Quaternion.identity, transform);
-
-            }else{
-            go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
-            }
-            go.GetComponent<TextMesh>().text = amount.ToString();
-        }
+        multiplier = 2f;
+    }
+    // If resist
+    else if ((elementalDamage + 3 - 1) % 3 == element)
+    {
+        multiplier = 0.5f;
     }
 
-    public void Heal(float amount)
+    amount *= multiplier;
+
+    if (amount < 0)
     {
-        if (amount < 0)
-        {
-            throw new System.ArgumentOutOfRangeException("Cannot have negative healing");
-        }
+        throw new System.ArgumentOutOfRangeException("Cannot have negative Damage");
+    }
 
-        bool wouldBeOverMaxHealth = health + amount > MAX_HEALTH;
-        StartCoroutine(VisualIndicator(Color.green));
+    // Check if cb and playerHealth are not null before using them
+    if (cb != null && cb.isLifeSteal() && playerHealth != null)
+    {
+        int healInt = Mathf.RoundToInt(amount);
+        playerHealth.Heal(healInt);
+    }
+    else
+    {
+        Debug.LogWarning("CardBuffs or PlayerHealth is not properly initialized.");
+    }
 
-        if (wouldBeOverMaxHealth)
+    this.health -= amount;
+    StartCoroutine(VisualIndicator(Color.red));
+
+    if (health <= 0)
+    {
+        Die();
+    }
+
+    if (FloatingTextPrefab && health >= 0)
+    {
+        GameObject go;
+        if (multiplier == 2f)
         {
-            this.health = MAX_HEALTH;
+            go = Instantiate(FloatingTextPrefabYellow, transform.position, Quaternion.identity, transform);
         }
         else
         {
-            this.health += amount;
+            go = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity, transform);
         }
+
+        go.GetComponent<TextMesh>().text = amount.ToString();
     }
+}
+
 
     private void Die()
     {
