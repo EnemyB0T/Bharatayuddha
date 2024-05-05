@@ -64,7 +64,7 @@ wm = FindObjectOfType<WaveManager>();
             wave6 = wave5 + wm.Wave5TotalEnemy;
         }
           else if (score == wave6){
-            StartCoroutine(w.Wave5());
+            StartCoroutine(w.Wave6());
             wm.WaveText.text = "Wave 6";
             wave7 = wave6 + wm.Wave6TotalEnemy;
         }

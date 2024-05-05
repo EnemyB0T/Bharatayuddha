@@ -5974,44 +5974,44 @@ MonoBehaviour:
   Wave4EnemyCount2: 10
   Wave5TotalEnemy: 21
   Wave5EnemyID: 1
-  Wave5EnemyCount: 7
+  Wave5EnemyCount: 15
   Wave5EnemyID2: 2
-  Wave5EnemyCount2: 7
+  Wave5EnemyCount2: 15
   Wave5EnemyID3: 3
-  Wave5EnemyCount3: 7
-  Wave6TotalEnemy: 28
+  Wave5EnemyCount3: 20
+  Wave6TotalEnemy: 27
   Wave6EnemyID: 1
-  Wave6EnemyCount: 10
+  Wave6EnemyCount: 20
   Wave6EnemyID2: 2
-  Wave6EnemyCount2: 10
+  Wave6EnemyCount2: 20
   Wave6EnemyID3: 3
-  Wave6EnemyCount3: 10
-  Wave7TotalEnemy: 30
+  Wave6EnemyCount3: 30
+  Wave7TotalEnemy: 27
   Wave7EnemyID: 1
-  Wave7EnemyCount: 10
+  Wave7EnemyCount: 20
   Wave7EnemyID2: 2
-  Wave7EnemyCount2: 10
+  Wave7EnemyCount2: 20
   Wave7EnemyID3: 3
-  Wave7EnemyCount3: 10
+  Wave7EnemyCount3: 20
   Wave8TotalEnemy: 25
   Wave8EnemyID: 1
-  Wave8EnemyCount: 10
+  Wave8EnemyCount: 30
   Wave8EnemyID2: 2
-  Wave8EnemyCount2: 10
+  Wave8EnemyCount2: 30
   Wave8EnemyID3: 3
   Wave8EnemyCount3: 10
-  Wave9TotalEnemy: 20
+  Wave9TotalEnemy: 25
   Wave9EnemyID: 2
-  Wave9EnemyCount: 10
+  Wave9EnemyCount: 20
   Wave9EnemyID2: 3
-  Wave9EnemyCount2: 10
+  Wave9EnemyCount2: 20
   Wave9EnemyID3: 2
   Wave9EnemyCount3: 10
   Wave10TotalEnemy: 30
   Wave10EnemyID: 1
-  Wave10EnemyCount: 10
+  Wave10EnemyCount: 20
   Wave10EnemyID2: 2
-  Wave10EnemyCount2: 20
+  Wave10EnemyCount2: 30
   Wave10EnemyID3: 3
   Wave10EnemyCount3: 10
 --- !u!4 &1078707952
