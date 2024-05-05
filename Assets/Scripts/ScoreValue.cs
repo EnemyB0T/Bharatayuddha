@@ -24,9 +24,11 @@ private int wave8;
 private int wave9;
 private int wave10;
 private int StageDone;
+private BuffMenu bm;
     void Start(){
 w = FindObjectOfType<Waves>();
 wm = FindObjectOfType<WaveManager>();
+ bm = FindObjectOfType<BuffMenu>();
     }
 
     // Start is called before the first frame update
@@ -40,6 +42,7 @@ wm = FindObjectOfType<WaveManager>();
       
         if (score == wm.Wave1TotalEnemy){
             w.Wave2();
+            //bm.WinUIActivate();
             wm.WaveText.text = "Wave 2";
             totalEnemy = wm.Wave1TotalEnemy + wm.Wave2TotalEnemy;
             //wave++;
@@ -87,7 +90,7 @@ wm = FindObjectOfType<WaveManager>();
         }
          else if (score == StageDone){
       
-            //Stage Cleared!
+            bm.WinUIActivate();
 
         }
     }

@@ -10,6 +10,7 @@ public class BuffMenu : MonoBehaviour
     public GameObject[] cardPrefabs; // Array of card prefabs
      public GameObject[] cardPrefabs2; // Array of card prefabs
     public GameObject buffMenuUI;
+    public GameObject WinUI;
      //public GameObject attackCard;
      // public GameObject healCard;
     private CardBuffs cb; // Reference to the CardBuffs script
@@ -22,8 +23,14 @@ public class BuffMenu : MonoBehaviour
     {
         cb = FindObjectOfType<CardBuffs>(); // Find and store reference to the CardBuffs script
         buffMenuUI.SetActive(false); // Initially hide the buff menu
+        WinUI.SetActive(false);
     }
-
+    public void WinUIActivate()
+    {
+        WinUI.SetActive(true);
+        Time.timeScale = 0.0f; // Pause the game
+        GameIsPaused = true;
+    }
     public void BuffMenuUI()
     {
         buffMenuUI.SetActive(true);

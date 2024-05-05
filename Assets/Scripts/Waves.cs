@@ -109,6 +109,8 @@ public IEnumerator Wave10(){
     yield return new WaitForSeconds(5f);
     es.SpawnEnemy3(wm.Wave10EnemyID3, wm.Wave10EnemyCount3);
 }
+
+
     }
     
     
