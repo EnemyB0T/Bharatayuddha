@@ -35,7 +35,7 @@ public class CharacterSwitch : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            ws.selectedWeapon = 3;
+            ws.selectedWeapon = 0;
              ws.SelectWeapon();
             spriteRenderer.sprite = Hydro;
         }
