@@ -50,7 +50,7 @@ public class DendroShootPoint : MonoBehaviour
                 Instantiate(data, shotPoint.position, transform.rotation);
                 timeBetweenShots = startTimeBetweenShots;
                 
-                fx.src.clip = fx.FireSFX;
+                fx.src.clip = fx.GrassSFX;
                 fx.src.Play();
             }
         }

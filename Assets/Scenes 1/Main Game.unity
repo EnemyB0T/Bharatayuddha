@@ -7396,6 +7396,7 @@ MonoBehaviour:
   src: {fileID: 1920630875}
   music: {fileID: 744946447}
   FireSFX: {fileID: 8300000, guid: 035fedb23268e8b4080235dc5c856cd3, type: 3}
+  GrassSFX: {fileID: 8300000, guid: c923840a88c85a04aa7f75474e21c4d3, type: 3}
   ImpactSFX: {fileID: 0}
   Stage1: {fileID: 8300000, guid: 14200814bb19ec2499a216c5b86290f6, type: 3}
 --- !u!4 &1370381934
