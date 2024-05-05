@@ -73,22 +73,22 @@ wm = FindObjectOfType<WaveManager>();
             wm.WaveText.text = "Wave 7";
             wave8 = wave7 + wm.Wave7TotalEnemy;
         }
-          else if (score == wave8){
+          else if (score == 100){
             StartCoroutine(w.Wave8());
             wm.WaveText.text = "Wave 8";
             wave9 = wave8 + wm.Wave8TotalEnemy;
         }
-          else if (score == wave9){
+          else if (score == 120){
             StartCoroutine(w.Wave9());
-            wm.WaveText.text = "Wave 9";
+            //wm.WaveText.text = "Wave 9";
             wave10 = wave9 + wm.Wave9TotalEnemy;
         }
-          else if (score == wave10){
+          else if (score == 130){
             StartCoroutine(w.Wave10());
-            wm.WaveText.text = "Wave 10";
+            //wm.WaveText.text = "Wave 10";
             StageDone=wave10 + wm.Wave10TotalEnemy;
         }
-         else if (score == StageDone){
+         else if (score == 150){
       
             bm.WinUIActivate();
 

@@ -8,7 +8,7 @@ public class MusicSFX : MonoBehaviour
    
     public AudioSource src;
     public AudioSource music;
-    public AudioClip FireSFX, GrassSFX, ImpactSFX, Stage1;
+    public AudioClip FireSFX, GrassSFX, WaterSFX, ImpactSFX, Stage1;
 
     void Start()
     {

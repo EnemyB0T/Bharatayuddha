@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
 
     private GameObject attackArea = default;
-
+ private MusicSFX fx;
     private bool attacking = false;
 
     private float timeToAttack = 0.25f;
@@ -16,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         attackArea = transform.GetChild(0).gameObject;
+        fx = FindObjectOfType<MusicSFX>();
     }
 
     // Update is called once per frame
@@ -24,6 +25,8 @@ public class PlayerAttack : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Attack();
+             fx.src.clip = fx.WaterSFX;
+            fx.src.Play();
         }
         
         if(attacking)
